@@ -16,21 +16,29 @@ body {
 
 .wrapper {
   display:flex;
+  flex-wrap: wrap;
   width: 90%;
   height: 90%;
-  flex-direction: column;
+  /* flex-direction: column; */
   overflow-x: hidden;
-  justify-content: space-between;
+  align-content: space-between;
+}
+
+.images-wrapper {
+  width: 100%;
+  height: 60%;
+  order: 1;
 }
 
 .images {
   display: flex;
   width: 500%;
-  height: 50%;
-  transition: all 0.3s ease;
+  height: 100%;
+  transition: all 0.3s ease;  
 }
 
 .image {
+  display: inline-block;
   width: 100%;
   height: 100%; 
 }
@@ -59,18 +67,17 @@ input {
   background-color: #6495ED;
 }
 
-.text-controls-box {
+.text-wrapper {
   width: 100%;
-  height: 50%;
-  display: flex;
-  flex-direction: column-reverse;
+  height: 30%;
+  order: 3;
 }
 
 .text {
   width: 500%;
+  height: 100%;
   display: flex;
   overflow: hidden;
-  flex-grow: 1;
   transition: all 0.3s ease;
 }
 
@@ -83,15 +90,20 @@ input {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.controls-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 3rem;
+  order: 2;
+}
+
 .controls {
-  align-self: center;
   display: flex;
   justify-content: space-between;
   width: 15rem;
   height: 3rem;
   background-color: #6495ED;
-  margin-top: 5%;
-  margin-bottom: 5%;
 }
 
 label {
@@ -112,7 +124,6 @@ label:active span {
   background-color:#0000FF;
 }
 
-
 label span {
   display: block;
   width: 1.5rem;
@@ -122,63 +133,53 @@ label span {
   transition: 0.3s ease-out;
 }
 
-
-.images:has(#img1:checked) ~ .text-controls-box > .controls label[for="img1"] > span {
+.images-wrapper:has(.images #img1:checked) ~ .controls-wrapper > .controls label[for="img1"] > span {
    background-color: #FF00FF;
+   cursor: default;
 } 
 
-.images:has(#img2:checked) ~ .text-controls-box > .controls label[for="img2"] > span {
+.images-wrapper:has(.images #img2:checked) ~ .controls-wrapper > .controls label[for="img2"] > span {
   background-color: #FF00FF;
+  cursor: default;
 } 
 
-.images:has(#img3:checked) ~ .text-controls-box > .controls label[for="img3"] > span {
+.images-wrapper:has(.images #img3:checked) ~ .controls-wrapper > .controls label[for="img3"] > span {
   background-color: #FF00FF;
+  cursor: default;
 } 
 
-.images:has(#img4:checked) ~ .text-controls-box > .controls label[for="img4"] > span {
+.images-wrapper:has(.images #img4:checked) ~ .controls-wrapper > .controls label[for="img4"] > span {
   background-color: #FF00FF;
-} 
+  cursor: default;
+}  
 
-.images:has(#img5:checked) ~ .text-controls-box > .controls label[for="img5"] > span {
+ .images-wrapper:has(.images #img5:checked) ~ .controls-wrapper > .controls label[for="img5"] > span {
   background-color: #FF00FF;
-} 
-
-.images:has(#img1:checked) ~ .text-controls-box > .controls label[for="img1"] {
   cursor: default;
-}
+}  
 
-.images:has(#img2:checked) ~ .text-controls-box > .controls label[for="img2"] {
-  cursor: default;
-}
-
-.images:has(#img3:checked) ~ .text-controls-box > .controls label[for="img3"] {
-  cursor: default;
-}
-
-.images:has(#img4:checked) ~ .text-controls-box > .controls label[for="img4"] {
-  cursor: default;
-}
-
-.images:has(#img5:checked) ~ .text-controls-box > .controls label[for="img5"] {
-  cursor: default;
-}
-
-.images:has(#img1:checked), .images:has(#img1:checked) ~ .text-controls-box .text {
+.images:has(#img1:checked), .images-wrapper:has(.images #img1:checked) ~ .text-wrapper .text {
   transform: translateX(0%);
 }
 
-.images:has(#img2:checked), .images:has(#img2:checked) ~ .text-controls-box .text {
+.images:has(#img2:checked), .images-wrapper:has(.images #img2:checked) ~ .text-wrapper .text {
   transform: translateX(-20%);
 }
 
-.images:has(#img3:checked), .images:has(#img3:checked) ~ .text-controls-box > .text {
+.images:has(#img3:checked), .images-wrapper:has(.images #img3:checked) ~ .text-wrapper > .text {
   transform: translateX(-40%);
 }
 
-.images:has(#img4:checked), .images:has(#img4:checked) ~ .text-controls-box > .text {
+.images:has(#img4:checked), .images-wrapper:has(.images #img4:checked) ~ .text-wrapper > .text {
   transform: translateX(-60%);
 }
 
-.images:has(#img5:checked), .images:has(#img5:checked) ~ .text-controls-box > .text {
+.images:has(#img5:checked), .images-wrapper:has(.images #img5:checked) ~ .text-wrapper > .text {
   transform: translateX(-80%);
 }
+
+/* 
+@media screen and (min-width: 1024px) {
+
+
+}  */
