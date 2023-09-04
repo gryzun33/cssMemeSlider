@@ -162,3 +162,23 @@ label span {
 .images:has(#img5:checked) ~ .text-controls-box > .controls label[for="img5"] {
   cursor: default;
 }
+
+.images:has(#img1:checked), .images:has(#img1:checked) ~ .text-controls-box .text {
+  transform: translateX(0%);
+}
+
+.images:has(#img2:checked), .images:has(#img2:checked) ~ .text-controls-box .text {
+  transform: translateX(-20%);
+}
+
+.images:has(#img3:checked), .images:has(#img3:checked) ~ .text-controls-box > .text {
+  transform: translateX(-40%);
+}
+
+.images:has(#img4:checked), .images:has(#img4:checked) ~ .text-controls-box > .text {
+  transform: translateX(-60%);
+}
+
+.images:has(#img5:checked), .images:has(#img5:checked) ~ .text-controls-box > .text {
+  transform: translateX(-80%);
+}
