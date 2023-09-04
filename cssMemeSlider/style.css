@@ -102,3 +102,63 @@ label {
   height: 3rem;
   cursor: pointer;
 }
+
+label:hover span {
+  background-color:#00CED1;
+}
+
+
+label:active span {
+  background-color:#0000FF;
+}
+
+
+label span {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #00FFFF;
+  border-radius: 50%;
+  transition: 0.3s ease-out;
+}
+
+
+.images:has(#img1:checked) ~ .text-controls-box > .controls label[for="img1"] > span {
+   background-color: #FF00FF;
+} 
+
+.images:has(#img2:checked) ~ .text-controls-box > .controls label[for="img2"] > span {
+  background-color: #FF00FF;
+} 
+
+.images:has(#img3:checked) ~ .text-controls-box > .controls label[for="img3"] > span {
+  background-color: #FF00FF;
+} 
+
+.images:has(#img4:checked) ~ .text-controls-box > .controls label[for="img4"] > span {
+  background-color: #FF00FF;
+} 
+
+.images:has(#img5:checked) ~ .text-controls-box > .controls label[for="img5"] > span {
+  background-color: #FF00FF;
+} 
+
+.images:has(#img1:checked) ~ .text-controls-box > .controls label[for="img1"] {
+  cursor: default;
+}
+
+.images:has(#img2:checked) ~ .text-controls-box > .controls label[for="img2"] {
+  cursor: default;
+}
+
+.images:has(#img3:checked) ~ .text-controls-box > .controls label[for="img3"] {
+  cursor: default;
+}
+
+.images:has(#img4:checked) ~ .text-controls-box > .controls label[for="img4"] {
+  cursor: default;
+}
+
+.images:has(#img5:checked) ~ .text-controls-box > .controls label[for="img5"] {
+  cursor: default;
+}
