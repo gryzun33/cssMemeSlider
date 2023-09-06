@@ -10,34 +10,22 @@ body {
   justify-content: center;
   align-items: center;
   background: #FF6347;
-  /* min-height: 40rem; */
-  max-height: 100vh;
   overflow: auto;
 }
 
 .wrapper {
   display:flex;
-  /* flex-wrap: wrap; */
   flex-direction: column;
-  /* row-gap: 2rem; */
   width: min(90%, 85vh);
   max-width: 90%;
-
   height: 90%;
   overflow-x: hidden;
   row-gap: 1rem;
-  /* align-content: flex-start; */
-  /* align-content: space-between; */
 }
 
 .images-wrapper {
   width: 100%;
   height: auto;
-  /* min-height: */
-  /* height: auto; */
-
-  order: 1;
-  /* align-self: flex-start; */
 }
 
 .images {
@@ -45,7 +33,6 @@ body {
   width: 500%;
   height: auto;
   transition: all 0.3s ease;  
-  
 }
 
 .image {
@@ -78,28 +65,18 @@ input {
   background-color: #6495ED;
 }
 
-/* img {
-  width: 100%;
-  object-fit: cover;
-  
-} */
-
-.text-wrapper {
-  /* display: flex; */
-  /* flex-direction: column-reverse; */
+.text-controls-box {
+  display: flex;
   flex-grow: 1;
-  width: 100%;
-  /* row-gap: 1rem; */
-  /* height: 30%; */
-  order: 3;
-  overflow: hidden;
-  /* flex-grow: 2; */
-  /* align-self: stretch; */
-  /* height: calc(100% - 7rem); */
-  
+  flex-direction: column-reverse;
+  row-gap: 1rem;
 }
 
-
+.text-wrapper {
+  flex-grow: 1;
+  width: 100%;
+  overflow: hidden;
+}
 
 .text {
   width: 500%;
@@ -122,9 +99,6 @@ input {
   width: 100%;
   display: flex;
   justify-content: center;
-  /* height: 3rem; */
-  order: 2;
-  
 }
 
 .controls {
@@ -163,79 +137,75 @@ label span {
   transition: 0.3s ease-out;
 }
 
-.images-wrapper:has(.images #img1:checked) ~ .controls-wrapper > .controls label[for="img1"] > span {
+.images-wrapper:has(.images #img1:checked) ~ .text-controls-box label[for="img1"] > span {
    background-color: #FF00FF;
    cursor: default;
 } 
 
-.images-wrapper:has(.images #img2:checked) ~ .controls-wrapper > .controls label[for="img2"] > span {
+.images-wrapper:has(.images #img2:checked) ~ .text-controls-box label[for="img2"] > span {
   background-color: #FF00FF;
   cursor: default;
 } 
 
-.images-wrapper:has(.images #img3:checked) ~ .controls-wrapper > .controls label[for="img3"] > span {
+.images-wrapper:has(.images #img3:checked) ~ .text-controls-box label[for="img3"] > span {
   background-color: #FF00FF;
   cursor: default;
 } 
 
-.images-wrapper:has(.images #img4:checked) ~ .controls-wrapper > .controls label[for="img4"] > span {
+.images-wrapper:has(.images #img4:checked) ~ .text-controls-box label[for="img4"] > span {
   background-color: #FF00FF;
   cursor: default;
 }  
 
- .images-wrapper:has(.images #img5:checked) ~ .controls-wrapper > .controls label[for="img5"] > span {
+ .images-wrapper:has(.images #img5:checked) ~ .text-controls-box label[for="img5"] > span {
   background-color: #FF00FF;
   cursor: default;
 }  
 
-.images:has(#img1:checked), .images-wrapper:has(.images #img1:checked) ~ .text-wrapper .text {
+.images:has(#img1:checked), .images-wrapper:has(.images #img1:checked) ~ .text-controls-box .text {
   transform: translateX(0%);
 }
 
-.images:has(#img2:checked), .images-wrapper:has(.images #img2:checked) ~ .text-wrapper .text {
+.images:has(#img2:checked), .images-wrapper:has(.images #img2:checked) ~ .text-controls-box .text {
   transform: translateX(-20%);
 }
 
-.images:has(#img3:checked), .images-wrapper:has(.images #img3:checked) ~ .text-wrapper > .text {
+.images:has(#img3:checked), .images-wrapper:has(.images #img3:checked) ~ .text-controls-box .text {
   transform: translateX(-40%);
 }
 
-.images:has(#img4:checked), .images-wrapper:has(.images #img4:checked) ~ .text-wrapper > .text {
+.images:has(#img4:checked), .images-wrapper:has(.images #img4:checked) ~ .text-controls-box .text {
   transform: translateX(-60%);
 }
 
-.images:has(#img5:checked), .images-wrapper:has(.images #img5:checked) ~ .text-wrapper > .text {
+.images:has(#img5:checked), .images-wrapper:has(.images #img5:checked) ~ .text-controls-box .text {
   transform: translateX(-80%);
 }
 
+@media screen and (min-width: 1024px) {
 
-/* @media screen and (min-width: 1024px) {
+  .wrapper {
+    width: 80%;
+  }
 
-  .images-wrapper {
-    height: auto;
+  .text-controls-box {
+    flex-direction: row;
   }
 
   .text-wrapper {
-    order: 2;
     width: 70%;
-    height: 20%;
-  }
+  } 
 
   .controls-wrapper {
-    order: 3;
     width: 30%;
-    height: 20%;
+    align-self: flex-start;
     justify-content: flex-end;
   }
 
-} 
+}
 
-*/
-
-/* @media screen and (min-width: 768px) {
-  
+@media screen and (min-width: 1200px) {
   .wrapper {
-    width: min(90%, 90vh);
-
+    width: 75%;
   }
-} */
+}
