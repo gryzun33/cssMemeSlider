@@ -11,16 +11,18 @@ body {
   align-items: center;
   /* background: #FF6347; */
   overflow: auto;
+  background-color: #1e3050;
 }
 
 .wrapper {
   display:flex;
   flex-direction: column;
-  width: min(90vh, 90vw);
+  width: min(100vh, 90vw);
+  /* width: 90vw; */
   max-width: 90%;
   /* height: 90%; */
   overflow-x: hidden;
-  row-gap: 1rem;
+  row-gap: 0.8rem;
 }
 
 .images-wrapper {
@@ -69,7 +71,7 @@ input {
   display: flex;
   flex-grow: 1;
   flex-direction: column-reverse;
-  row-gap: 1rem;
+  row-gap: 0.8rem;
 }
 
 .text-wrapper {
@@ -95,6 +97,7 @@ input {
   padding-right: 0.5rem; */
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
+  color: #B0C4DE
 }
 
 .controls-wrapper {
@@ -122,45 +125,50 @@ label {
 }
 
 label:hover span {
-  background-color:#00CED1;
+  background-color:#4682B4;
 }
 
 
 label:active span {
-  background-color:#0000FF;
+  background-color:	#000080;
 }
 
 label span {
   display: block;
   width: 1rem;
   height: 1rem;
-  background-color: #00FFFF;
+  background-color: #87CEFA;
   border-radius: 50%;
   transition: 0.3s ease-out;
 }
 
 .images-wrapper:has(.images #img1:checked) ~ .text-controls-box label[for="img1"] > span {
-   background-color: #FF00FF;
+   background-color: transparent;
+   border: 2px solid #87CEFA;
    cursor: default;
 } 
 
 .images-wrapper:has(.images #img2:checked) ~ .text-controls-box label[for="img2"] > span {
-  background-color: #FF00FF;
+  background-color: transparent;
+  border: 2px solid #87CEFA;
   cursor: default;
 } 
 
 .images-wrapper:has(.images #img3:checked) ~ .text-controls-box label[for="img3"] > span {
-  background-color: #FF00FF;
+  background-color: transparent;
+  border: 2px solid #87CEFA;
   cursor: default;
 } 
 
 .images-wrapper:has(.images #img4:checked) ~ .text-controls-box label[for="img4"] > span {
-  background-color: #FF00FF;
+  background-color: transparent;
+  border: 2px solid #87CEFA;
   cursor: default;
 }  
 
  .images-wrapper:has(.images #img5:checked) ~ .text-controls-box label[for="img5"] > span {
-  background-color: #FF00FF;
+  background-color: transparent;
+  border: 2px solid #87CEFA;
   cursor: default;
 }  
 
@@ -184,10 +192,24 @@ label span {
   transform: translateX(-80%);
 }
 
+@media screen and (min-width: 500px) {
+  .text-item {
+    font-size: 1.0rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .text-item {
+    font-size: 1.1rem;
+  }
+}
+
+
 @media screen and (min-width: 1024px) {
 
   .wrapper {
     width: 80%;
+    row-gap: 1.1rem;
   }
 
   .text-controls-box {
@@ -195,6 +217,7 @@ label span {
   }
 
   .text-wrapper {
+    padding-top: 0.5rem;
     width: 70%;
   } 
 
