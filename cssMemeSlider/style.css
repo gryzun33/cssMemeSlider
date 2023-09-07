@@ -9,7 +9,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: #FF6347; */
   overflow: auto;
   background-color: #1e3050;
 }
@@ -18,9 +17,7 @@ body {
   display:flex;
   flex-direction: column;
   width: min(100vh, 90vw);
-  /* width: 90vw; */
   max-width: 90%;
-  /* height: 90%; */
   overflow-x: hidden;
   row-gap: 0.8rem;
 }
@@ -47,26 +44,6 @@ input {
   display: none;
 }
 
-/* .image1 {
-  background-color: #FFFF00;
-}
-
-.image2 {
-  background-color: #7CFC00;
-}
-
-.image3 {
-  background-color: #00FFFF;
-}
-
-.image4 {
-  background-color: #FF00FF;
-}
-
-.image5 {
-  background-color: #6495ED;
-} */
-
 .text-controls-box {
   display: flex;
   flex-grow: 1;
@@ -75,7 +52,6 @@ input {
 }
 
 .text-wrapper {
-  /* flex-grow: 1; */
   width: 100%;
   overflow: hidden;
 }
@@ -89,14 +65,10 @@ input {
 }
 
 .text-item {
-  /* background-color: #7CFC00; */
   width: 100%;
   height: 100%;
   font-size: 0.9rem;
-  /* padding-left: 0.5rem;
-  padding-right: 0.5rem; */
   font-family: 'Rubik', sans-serif;
-  /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
   font-weight: 400;
   color: #B0C4DE
 }
@@ -112,7 +84,6 @@ input {
   justify-content: space-between;
   width: 10rem;
   height: 2rem;
-  /* background-color: #6495ED; */
   align-self: center;
 }
 
@@ -127,23 +98,6 @@ label {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-label:hover span {
-  background-color:#4682B4;
-}
-
-label:active {
-  background-color: #1e3050;
-}
-
-label:focus {
-  background-color:  #1e3050;
-}
-
-
-label:active span {
-  background-color:	#000080;
-}
-
 label span {
   display: block;
   width: 1rem;
@@ -153,68 +107,66 @@ label span {
   transition: 0.3s ease-out;
 }
 
-.images-wrapper:has(.images #img1:checked) ~ .text-controls-box label[for="img1"] > span {
-   background-color: transparent;
-   border: 2px solid #87CEFA;
-   cursor: default;
-} 
+label:active span {
+  background-color:	#000080;
+}
 
-.images-wrapper:has(.images #img2:checked) ~ .text-controls-box label[for="img2"] > span {
+.images-wrapper:has(.images #img1:checked) ~ .text-controls-box label[for="img1"] > span,
+.images-wrapper:has(.images #img2:checked) ~ .text-controls-box label[for="img2"] > span,
+.images-wrapper:has(.images #img3:checked) ~ .text-controls-box label[for="img3"] > span,
+.images-wrapper:has(.images #img4:checked) ~ .text-controls-box label[for="img4"] > span,
+.images-wrapper:has(.images #img5:checked) ~ .text-controls-box label[for="img5"] > span {
   background-color: transparent;
   border: 2px solid #87CEFA;
-  cursor: default;
-} 
+}
 
-.images-wrapper:has(.images #img3:checked) ~ .text-controls-box label[for="img3"] > span {
+.images-wrapper:has(.images #img1:checked) ~ .text-controls-box label[for="img1"]:hover > span,
+.images-wrapper:has(.images #img2:checked) ~ .text-controls-box label[for="img2"]:hover > span,
+.images-wrapper:has(.images #img3:checked) ~ .text-controls-box label[for="img3"]:hover > span,
+.images-wrapper:has(.images #img4:checked) ~ .text-controls-box label[for="img4"]:hover > span,
+.images-wrapper:has(.images #img5:checked) ~ .text-controls-box label[for="img5"]:hover > span {
   background-color: transparent;
-  border: 2px solid #87CEFA;
-  cursor: default;
-} 
+  border: 2px solid #4682B4;
+}
 
-.images-wrapper:has(.images #img4:checked) ~ .text-controls-box label[for="img4"] > span {
-  background-color: transparent;
-  border: 2px solid #87CEFA;
-  cursor: default;
-}  
-
- .images-wrapper:has(.images #img5:checked) ~ .text-controls-box label[for="img5"] > span {
-  background-color: transparent;
-  border: 2px solid #87CEFA;
-  cursor: default;
-}  
-
-.images:has(#img1:checked), .images-wrapper:has(.images #img1:checked) ~ .text-controls-box .text {
+.images:has(#img1:checked), 
+.images-wrapper:has(.images #img1:checked) ~ .text-controls-box .text {
   transform: translateX(0%);
 }
 
-.images:has(#img2:checked), .images-wrapper:has(.images #img2:checked) ~ .text-controls-box .text {
+.images:has(#img2:checked), 
+.images-wrapper:has(.images #img2:checked) ~ .text-controls-box .text {
   transform: translateX(-20%);
 }
 
-.images:has(#img3:checked), .images-wrapper:has(.images #img3:checked) ~ .text-controls-box .text {
+.images:has(#img3:checked), 
+.images-wrapper:has(.images #img3:checked) ~ .text-controls-box .text {
   transform: translateX(-40%);
 }
 
-.images:has(#img4:checked), .images-wrapper:has(.images #img4:checked) ~ .text-controls-box .text {
+.images:has(#img4:checked), 
+.images-wrapper:has(.images #img4:checked) ~ .text-controls-box .text {
   transform: translateX(-60%);
 }
 
-.images:has(#img5:checked), .images-wrapper:has(.images #img5:checked) ~ .text-controls-box .text {
+.images:has(#img5:checked),
+.images-wrapper:has(.images #img5:checked) ~ .text-controls-box .text {
   transform: translateX(-80%);
 }
 
 @media screen and (min-width: 500px) {
+
   .text-item {
     font-size: 1.0rem;
   }
 }
 
 @media screen and (min-width: 768px) {
+
   .text-item {
     font-size: 1.1rem;
   }
 }
-
 
 @media screen and (min-width: 1024px) {
 
@@ -248,4 +200,12 @@ label span {
   .wrapper {
     width: 75%;
   }
+}
+
+@media (hover: hover) {
+
+  label:hover span {
+    background-color:#4682B4;
+  }
+
 }
