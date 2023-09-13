@@ -5,19 +5,20 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: auto;
   background-color: #1e3050;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .wrapper {
   display:flex;
   flex-direction: column;
-  width: min(100vh, 90vw);
-  max-width: 90%;
+  width: 90%;
   overflow-x: hidden;
   row-gap: 0.8rem;
 }
@@ -117,7 +118,7 @@ label:active span {
 .images-wrapper:has(.images #img4:checked) ~ .text-controls-box label[for="img4"] > span,
 .images-wrapper:has(.images #img5:checked) ~ .text-controls-box label[for="img5"] > span {
   background-color: transparent;
-  border: 2px solid #87CEFA;
+  border: 0.15rem solid#87CEFA;
 }
 
 .images-wrapper:has(.images #img1:checked) ~ .text-controls-box label[for="img1"]:hover > span,
@@ -126,7 +127,7 @@ label:active span {
 .images-wrapper:has(.images #img4:checked) ~ .text-controls-box label[for="img4"]:hover > span,
 .images-wrapper:has(.images #img5:checked) ~ .text-controls-box label[for="img5"]:hover > span {
   background-color: transparent;
-  border: 2px solid #4682B4;
+  border: 0.15rem solid #4682B4;
 }
 
 .images:has(#img1:checked), 
@@ -171,7 +172,6 @@ label:active span {
 @media screen and (min-width: 1024px) {
 
   .wrapper {
-    width: 80%;
     row-gap: 1.1rem;
   }
 
@@ -198,7 +198,8 @@ label:active span {
 
 @media screen and (min-width: 1200px) {
   .wrapper {
-    width: 75%;
+    width: 90%;
+    max-width: 70rem;
   }
 }
 
