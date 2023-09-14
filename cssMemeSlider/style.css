@@ -173,6 +173,7 @@ label:active span {
 
   .wrapper {
     row-gap: 1.1rem;
+    width: 80%;
   }
 
   .text-controls-box {
@@ -198,7 +199,7 @@ label:active span {
 
 @media screen and (min-width: 1200px) {
   .wrapper {
-    width: 90%;
+    /* width: 90%; */
     max-width: 70rem;
   }
 }
