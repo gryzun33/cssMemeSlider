@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  background-color: #1e3050;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.wrapper {
+  display:flex;
+  flex-direction: column;
+  width: 90%;
+  overflow-x: hidden;
+  row-gap: 0.8rem;
+}
+
+.images-wrapper {
+  width: 100%;
+  height: auto;
+}
+
+.images {
+  display: flex;
+  width: 500%;
+  height: auto;
+  transition: all 0.3s ease;  
+}
+
+.image {
+  display: inline-block;
+  width: 20%;
+  height: auto;
+}  
+
+input {
+  display: none;
+}
+
+.text-controls-box {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column-reverse;
+  row-gap: 0.8rem;
+}
+
+.text-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.text {
+  width: 500%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.text-item {
+  width: 100%;
+  height: 100%;
+  font-size: 0.9rem;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  color: #B0C4DE
+}
+
+.controls-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  width: 10rem;
+  height: 2rem;
+  align-self: center;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+label span {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background-color: #87CEFA;
+  border-radius: 50%;
+  transition: 0.3s ease-out;
+}
+
+label:hover span {
+  background-color:#4682B4;
+}
+
+label:active > span{
+  background-color:	#000080;
+}
+
+
+.images-wrapper:has(.images #img1:checked) ~ .text-controls-box label[for="img1"] > span,
+.images-wrapper:has(.images #img2:checked) ~ .text-controls-box label[for="img2"] > span,
+.images-wrapper:has(.images #img3:checked) ~ .text-controls-box label[for="img3"] > span,
+.images-wrapper:has(.images #img4:checked) ~ .text-controls-box label[for="img4"] > span,
+.images-wrapper:has(.images #img5:checked) ~ .text-controls-box label[for="img5"] > span {
+  background-color: transparent;
+  border: 0.15rem solid#87CEFA;
+}
+
+.images-wrapper:has(.images #img1:checked) ~ .text-controls-box label[for="img1"]:hover > span,
+.images-wrapper:has(.images #img2:checked) ~ .text-controls-box label[for="img2"]:hover > span,
+.images-wrapper:has(.images #img3:checked) ~ .text-controls-box label[for="img3"]:hover > span,
+.images-wrapper:has(.images #img4:checked) ~ .text-controls-box label[for="img4"]:hover > span,
+.images-wrapper:has(.images #img5:checked) ~ .text-controls-box label[for="img5"]:hover > span {
+  background-color: transparent;
+  border: 0.15rem solid #4682B4;
+}
+
+.images:has(#img1:checked), 
+.images-wrapper:has(.images #img1:checked) ~ .text-controls-box .text {
+  transform: translateX(0%);
+}
+
+.images:has(#img2:checked), 
+.images-wrapper:has(.images #img2:checked) ~ .text-controls-box .text {
+  transform: translateX(-20%);
+}
+
+.images:has(#img3:checked), 
+.images-wrapper:has(.images #img3:checked) ~ .text-controls-box .text {
+  transform: translateX(-40%);
+}
+
+.images:has(#img4:checked), 
+.images-wrapper:has(.images #img4:checked) ~ .text-controls-box .text {
+  transform: translateX(-60%);
+}
+
+.images:has(#img5:checked),
+.images-wrapper:has(.images #img5:checked) ~ .text-controls-box .text {
+  transform: translateX(-80%);
+}
+
+@media screen and (min-width: 500px) {
+
+  .wrapper {
+    width: 80%;
+  }
+
+  .text-item {
+    font-size: 1.0rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+
+  .wrapper {
+    row-gap: 1.1rem;
+  }
+
+  .text-controls-box {
+    flex-direction: row;
+  }
+
+  .text-wrapper {
+    padding-top: 0.5rem;
+    width: 70%;
+  } 
+
+  .controls-wrapper {
+    width: 30%;
+    align-self: flex-start;
+    justify-content: flex-end;
+  }
+
+  .text-item {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  .text-item {
+    font-size: 1.2rem;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+  .wrapper {
+    max-width: 70rem;
+  }
+}
