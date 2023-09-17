@@ -108,9 +108,14 @@ label span {
   transition: 0.3s ease-out;
 }
 
-label:active span {
+label:hover span {
+  background-color:#4682B4;
+}
+
+label:active > span{
   background-color:	#000080;
 }
+
 
 .images-wrapper:has(.images #img1:checked) ~ .text-controls-box label[for="img1"] > span,
 .images-wrapper:has(.images #img2:checked) ~ .text-controls-box label[for="img2"] > span,
@@ -157,23 +162,19 @@ label:active span {
 
 @media screen and (min-width: 500px) {
 
+  .wrapper {
+    width: 80%;
+  }
+
   .text-item {
     font-size: 1.0rem;
   }
 }
 
-@media screen and (min-width: 768px) {
-
-  .text-item {
-    font-size: 1.1rem;
-  }
-}
-
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 769px) {
 
   .wrapper {
     row-gap: 1.1rem;
-    width: 80%;
   }
 
   .text-controls-box {
@@ -185,29 +186,27 @@ label:active span {
     width: 70%;
   } 
 
-  .text-item {
-    font-size: 1.2rem;
-  }
-
   .controls-wrapper {
     width: 30%;
     align-self: flex-start;
     justify-content: flex-end;
   }
 
+  .text-item {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  .text-item {
+    font-size: 1.2rem;
+  }
+
 }
 
 @media screen and (min-width: 1200px) {
   .wrapper {
-    /* width: 90%; */
     max-width: 70rem;
   }
-}
-
-@media (hover: hover) {
-
-  label:hover span {
-    background-color:#4682B4;
-  }
-
 }
